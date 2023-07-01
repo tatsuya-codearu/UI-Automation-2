@@ -10,8 +10,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
-	public WebDriver driver;
-	
+	WebDriver driver;
 	
 	//@Optional(value="browser")
 	@BeforeClass
@@ -31,6 +30,8 @@ public class BaseTest {
 				driver = new EdgeDriver();
 				break;
 		}
+		
+		
 		driver.get(url);
 		driver.manage().window().maximize();
 	}

@@ -35,5 +35,6 @@ public class Generic {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+	
 
 }

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-30T14:24:24 SAST" name="Suite" finished-at="2023-06-30T14:24:41 SAST" duration-ms="16542">
+  <suite started-at="2023-07-01T04:02:31 SAST" name="Suite" finished-at="2023-07-01T04:02:47 SAST" duration-ms="15808">
     <groups>
     </groups>
-    <test started-at="2023-06-30T14:24:24 SAST" name="Test" finished-at="2023-06-30T14:24:41 SAST" duration-ms="16542">
+    <test started-at="2023-07-01T04:02:31 SAST" name="Test" finished-at="2023-07-01T04:02:47 SAST" duration-ms="15808">
       <class name="Reporting.TestCase">
-        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String)[pri:0, instance:Reporting.TestCase@2fd953a6]" started-at="2023-06-30T14:24:24 SAST" name="initializeDriver" finished-at="2023-06-30T14:24:33 SAST" duration-ms="8931" status="PASS">
+        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String)[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-01T04:02:31 SAST" name="initializeDriver" finished-at="2023-07-01T04:02:39 SAST" duration-ms="8018" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeDriver -->
-        <test-method signature="prodComp1()[pri:0, instance:Reporting.TestCase@2fd953a6]" started-at="2023-06-30T14:24:33 SAST" name="prodComp1" finished-at="2023-06-30T14:24:39 SAST" duration-ms="5790" status="PASS">
+        <test-method signature="prodComp1()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-01T04:02:39 SAST" name="prodComp1" finished-at="2023-07-01T04:02:45 SAST" duration-ms="6117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prodComp1 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Reporting.TestCase@2fd953a6]" started-at="2023-06-30T14:24:39 SAST" name="teardown" finished-at="2023-06-30T14:24:41 SAST" duration-ms="1779" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-01T04:02:45 SAST" name="teardown" finished-at="2023-07-01T04:02:47 SAST" duration-ms="1627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

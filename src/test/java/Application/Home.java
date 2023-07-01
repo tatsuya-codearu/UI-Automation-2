@@ -5,11 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Reporting.listeners;
 import Utilities.Generic;
 
 public class Home extends Generic{
 	WebDriver driver;
-	
+	listeners listeners = new listeners();
+
 	public Home (WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -37,6 +39,8 @@ public class Home extends Generic{
 	
 	public void radiantTee() {
 		scrollTo(0,1600);
+		listeners.takeScreenshot(driver);
+		waitForElement(rad);
 		hover(rad);
 		waitForElement(radComp);
 		radComp.click();
