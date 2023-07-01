@@ -1,4 +1,4 @@
-package Data;
+package Utilities;
 
 public class ExcelData {
 
