@@ -18,7 +18,7 @@ import com.aventstack.extentreports.Status;
 import Utilities.ExtentReporterNG;
 
 public class listeners extends BaseTest implements ITestListener{
-	
+	WebDriver driver;
 	static ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 
@@ -39,6 +39,7 @@ public class listeners extends BaseTest implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.fail(result.getThrowable());
+		takeScreenshot(driver);
 	}
 
 	@Override
@@ -70,8 +71,11 @@ public class listeners extends BaseTest implements ITestListener{
 	
 	public void takeScreenshot(WebDriver driver) {
 		try {
-			TakesScreenshot ts = (TakesScreenshot) driver;
-			File file = ts.getScreenshotAs(OutputType.FILE);
+	        if (driver == null) {
+	            throw new IllegalArgumentException("WebDriver instance is null");
+	        }
+	        TakesScreenshot ts = (TakesScreenshot) driver;
+	        File file = ts.getScreenshotAs(OutputType.FILE);
 			String scpath ="C:\\Users\\gvila\\Selenium\\Automation_Assessment_2\\Reporting\\";
 			String scimg = "screenshot" + Math.random() + ".png";
 			String screenshot = scpath + scimg;
@@ -83,6 +87,10 @@ public class listeners extends BaseTest implements ITestListener{
 			throw new RuntimeException(ex);
 		}
 		
+	}
+	
+	public void log(String desc) {
+		test.log(Status.INFO, desc);
 	}
 
 

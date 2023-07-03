@@ -28,24 +28,5 @@ public class ExtentReporterNG {
 		return extent;
 	}
 	
-	/*public static String takeScreenshot(WebDriver driver) {
-		try {
-			String fileSeperator = System.getProperty("file,seperator");
-			String extentReportsPath = System.getProperty("user.dir") 
-					+ fileSeperator + "src" + fileSeperator + "test" + fileSeperator + "java" + fileSeperator + "reporting";
-			String screenshotPath = extentReportsPath + fileSeperator + "screenshots";
-			
-			File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			String screenshotName = "screenshot" + Math.random() + ".png";
-			String screenshot = screenshotPath + fileSeperator + screenshotName;
-			
-			FileUtils.copyFile(file, new File(screenshot));
-			return "." + fileSeperator + "screenshots" + fileSeperator + screenshotName;
-		}catch(Exception ex){
-			Assert.fail("test failed"+ ex);
-			throw new RuntimeException(ex);
-		}
-		
-	}*/
 
 }
