@@ -5,10 +5,14 @@
 		<listener class-name="Reporting.listeners" />
 	</listeners>
 	<test thread-count="5" name="Test">
+
 		<classes>
 			<class name="Reporting.TestCase">
 				<parameter name="browser" value="firefox" />
 				<parameter name="url" value="https://magento.softwaretestingboard.com" />
+				<parameter name="testId5" value="TC-005" />
+				<parameter name="testId6" value="TC-006" />
+				
 			</class>
 		</classes>
 	</test> <!-- Test -->

@@ -39,7 +39,22 @@ public class listeners extends BaseTest implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.fail(result.getThrowable());
-		takeScreenshot(driver);
+		try {
+	        if (driver == null) {
+	            throw new IllegalArgumentException("WebDriver instance is null");
+	        }
+	        TakesScreenshot ts = (TakesScreenshot) driver;
+	        File file = ts.getScreenshotAs(OutputType.FILE);
+			String scpath ="C:\\Users\\gvila\\Selenium\\Automation_Assessment_2\\Reporting\\";
+			String scimg = "screenshot" + Math.random() + ".png";
+			String screenshot = scpath + scimg;
+			FileUtils.copyFile(file, new File(screenshot));
+			test.addScreenCaptureFromPath(screenshot);
+			
+		}catch(Exception ex){
+			Assert.fail("test failed"+ ex);
+			throw new RuntimeException(ex);
+		}
 	}
 
 	@Override

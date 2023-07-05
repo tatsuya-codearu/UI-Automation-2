@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-03T15:37:01 SAST" name="Suite" finished-at="2023-07-03T15:37:40 SAST" duration-ms="39415">
+  <suite started-at="2023-07-05T16:58:56 SAST" name="Suite" finished-at="2023-07-05T16:59:45 SAST" duration-ms="49430">
     <groups>
+      <group name="TS-003">
+        <method signature="TestCase.TestCase5(java.lang.String)[pri:0, instance:Reporting.TestCase@3b96c42e]" name="TestCase5" class="Reporting.TestCase"/>
+      </group> <!-- TS-003 -->
+      <group name="TS-004">
+        <method signature="TestCase.TestCase6(java.lang.String)[pri:0, instance:Reporting.TestCase@3b96c42e]" name="TestCase6" class="Reporting.TestCase"/>
+      </group> <!-- TS-004 -->
     </groups>
-    <test started-at="2023-07-03T15:37:01 SAST" name="Test" finished-at="2023-07-03T15:37:40 SAST" duration-ms="39415">
+    <test started-at="2023-07-05T16:58:56 SAST" name="Test" finished-at="2023-07-05T16:59:45 SAST" duration-ms="49430">
       <class name="Reporting.TestCase">
-        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String)[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-03T15:37:01 SAST" name="initializeDriver" finished-at="2023-07-03T15:37:10 SAST" duration-ms="9458" status="PASS">
+        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String)[pri:0, instance:Reporting.TestCase@3b96c42e]" started-at="2023-07-05T16:58:56 SAST" name="initializeDriver" finished-at="2023-07-05T16:59:03 SAST" duration-ms="7149" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,19 +29,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeDriver -->
-        <test-method signature="TestCase1()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-03T15:37:10 SAST" name="TestCase1" finished-at="2023-07-03T15:37:18 SAST" duration-ms="7293" status="PASS">
+        <test-method signature="TestCase5(java.lang.String)[pri:0, instance:Reporting.TestCase@3b96c42e]" started-at="2023-07-05T16:59:03 SAST" name="TestCase5" finished-at="2023-07-05T16:59:21 SAST" duration-ms="18121" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC-005]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase1 -->
-        <test-method signature="TestCase2()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-03T15:37:18 SAST" name="TestCase2" finished-at="2023-07-03T15:37:26 SAST" duration-ms="7940" status="PASS">
+        </test-method> <!-- TestCase5 -->
+        <test-method signature="TestCase6(java.lang.String)[pri:0, instance:Reporting.TestCase@3b96c42e]" started-at="2023-07-05T16:59:21 SAST" name="TestCase6" finished-at="2023-07-05T16:59:42 SAST" duration-ms="21017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC-006]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase2 -->
-        <test-method signature="TestCase3()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-03T15:37:26 SAST" name="TestCase3" finished-at="2023-07-03T15:37:36 SAST" duration-ms="10680" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase3 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Reporting.TestCase@a4add54]" started-at="2023-07-03T15:37:36 SAST" name="teardown" finished-at="2023-07-03T15:37:40 SAST" duration-ms="3966" status="PASS">
+        </test-method> <!-- TestCase6 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Reporting.TestCase@3b96c42e]" started-at="2023-07-05T16:59:42 SAST" name="teardown" finished-at="2023-07-05T16:59:45 SAST" duration-ms="3115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

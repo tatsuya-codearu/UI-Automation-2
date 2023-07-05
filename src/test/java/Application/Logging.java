@@ -1,5 +1,7 @@
 package Application;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,11 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import Reporting.listeners;
+import Utilities.ExcelData;
 import Utilities.Generic;
 
 public class Logging extends Generic{
 	WebDriver driver;
 	listeners lst = new listeners();
+	ExcelData xl = new ExcelData();
 	
 	public Logging(WebDriver driver) {
 		super(driver);
@@ -19,14 +23,33 @@ public class Logging extends Generic{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css="div[class='panel header'] span[class='not-logged-in']")
-	WebElement guest;
+	@FindBy(css="div[class='panel header'] li[data-label='or'] a")
+	WebElement signin;
+	
+	@FindBy(css="#email")
+	WebElement email;
+	
+	@FindBy(xpath="//fieldset[@class='fieldset login']//input[@id='pass']")
+	WebElement pass;
+	
+	@FindBy(css="fieldset[class='fieldset login'] div[class='primary'] span")
+	WebElement btnsign;
 	
 	public void verifyNotLogged() {
-		waitForElement(guest);
-		String msg = "Default welcome msg!";
-		Assert.assertEquals(guest.getText(), msg);
-		lst.log("User not logged in confirmed");
+		waitForElement(signin);
+		String msg = "Sign In";
+		Assert.assertEquals(signin.getText(), msg);
+	 	lst.log("User not logged in confirmed");
+	}
+	
+	public void login(String testid) throws IOException {
+		signin.click();
+		email.clear();
+		pass.clear();
+		email.sendKeys(xl.xlData(testid, "username").toString());
+		pass.sendKeys(xl.xlData(testid, "password").toString());
+		lst.takeScreenshot(driver);
+		btnsign.click();
 	}
 
 }

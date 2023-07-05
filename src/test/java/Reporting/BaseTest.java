@@ -19,6 +19,7 @@ public class BaseTest {
 
 		switch(browser) {
 			case "firefox":
+				System.setProperty("webdriver.firefox.driver", "C:\\Users\\gvila\\Documents\\drivers\\geckodriver");
 				driver = new FirefoxDriver();
 				break;
 			
