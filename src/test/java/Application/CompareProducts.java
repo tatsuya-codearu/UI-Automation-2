@@ -47,13 +47,15 @@ public class CompareProducts extends Generic{
 		home.compPge.click();
 		//scrollTo(home.compRad);
 		Assert.assertEquals(home.verifyRT(), home.compRad.getText());
-		
+		scrollTo(0,0);
+		hmpge.click();
 	}
 	
 	public void comp2() throws InterruptedException {
 		Logging lg = new Logging(driver);
+		
 		lg.verifyNotLogged();
-		hmpge.click();
+		
 		home.breatheEz();
 		home.compPge.click();
 		Assert.assertEquals(home.verifyEZT(), home.compEZ.getText());

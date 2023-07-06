@@ -32,7 +32,7 @@ public class Home extends Generic {
 	@FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
 	WebElement radConf;
 
-	@FindBy(xpath = "//a[@title='Compare Products']")
+	@FindBy(linkText = "comparison list")
 	WebElement compPge;
 
 	@FindBy(xpath = "//a[normalize-space()='Radiant Tee']")
@@ -160,11 +160,12 @@ public class Home extends Generic {
 
 	}
 
-	public void hero() {
+	public void hero() throws InterruptedException {
 		scrollTo(0, 1650);
 		lst.takeScreenshot(driver);
 		waitForElement(hero);
 		hover(hero);
+		Thread.sleep(5000);
 		hero_size.click();
 		hero_color.click();
 		lst.takeScreenshot(driver);
@@ -178,7 +179,7 @@ public class Home extends Generic {
 		}
 		lst.takeScreenshot(driver);
 		cart.click();
-		waitForElement(cart_hero);
+		Thread.sleep(9000);
 		if (cart_hero.getText().equals(hero.getText())) {
 			lst.log("Hero Hoodie is added in cart when cart icon clicked");
 		} else {

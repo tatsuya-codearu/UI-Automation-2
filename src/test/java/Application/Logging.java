@@ -23,7 +23,7 @@ public class Logging extends Generic{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css="div[class='panel header'] li[data-label='or'] a")
+	@FindBy(xpath="//div[@class='panel header']//a[contains(text(),'Sign In')]")
 	WebElement signin;
 	
 	@FindBy(css="#email")
@@ -43,7 +43,9 @@ public class Logging extends Generic{
 	}
 	
 	public void login(String testid) throws IOException {
-		signin.click();
+		hover(signin);
+		click(signin);
+		waitForElement(email);
 		email.clear();
 		pass.clear();
 		email.sendKeys(xl.xlData(testid, "username").toString());

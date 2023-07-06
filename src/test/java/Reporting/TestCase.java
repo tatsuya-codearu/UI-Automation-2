@@ -33,7 +33,7 @@ public class TestCase extends BaseTest{
 	}
 	
 	@Test(groups="TS-002")
-	public void TestCase4() {
+	public void TestCase4() throws InterruptedException {
 		Home home = new Home(driver);
 		Logging lg = new Logging(driver);
 		
