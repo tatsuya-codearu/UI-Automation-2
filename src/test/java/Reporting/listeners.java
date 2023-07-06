@@ -1,5 +1,12 @@
 package Reporting;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -11,8 +18,8 @@ import com.aventstack.extentreports.Status;
 import Utilities.ExtentReporterNG;
 
 public class listeners extends BaseTest implements ITestListener{
-	
-	ExtentTest test;
+	WebDriver driver;
+	static ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 
 	@Override
@@ -25,12 +32,29 @@ public class listeners extends BaseTest implements ITestListener{
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.log(Status.PASS, "Test Passed");
+		
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.fail(result.getThrowable());
+		try {
+	        if (driver == null) {
+	            throw new IllegalArgumentException("WebDriver instance is null");
+	        }
+	        TakesScreenshot ts = (TakesScreenshot) driver;
+	        File file = ts.getScreenshotAs(OutputType.FILE);
+			String scpath ="C:\\Users\\gvila\\Selenium\\Automation_Assessment_2\\Reporting\\";
+			String scimg = "screenshot" + Math.random() + ".png";
+			String screenshot = scpath + scimg;
+			FileUtils.copyFile(file, new File(screenshot));
+			test.addScreenCaptureFromPath(screenshot);
+			
+		}catch(Exception ex){
+			Assert.fail("test failed"+ ex);
+			throw new RuntimeException(ex);
+		}
 	}
 
 	@Override
@@ -59,5 +83,31 @@ public class listeners extends BaseTest implements ITestListener{
 		// TODO Auto-generated method stub
 		extent.flush();
 	}
+	
+	public void takeScreenshot(WebDriver driver) {
+		try {
+	        if (driver == null) {
+	            throw new IllegalArgumentException("WebDriver instance is null");
+	        }
+	        TakesScreenshot ts = (TakesScreenshot) driver;
+	        File file = ts.getScreenshotAs(OutputType.FILE);
+			String scpath ="C:\\Users\\gvila\\Selenium\\Automation_Assessment_2\\Reporting\\";
+			String scimg = "screenshot" + Math.random() + ".png";
+			String screenshot = scpath + scimg;
+			FileUtils.copyFile(file, new File(screenshot));
+			test.addScreenCaptureFromPath(screenshot);
+			
+		}catch(Exception ex){
+			Assert.fail("test failed"+ ex);
+			throw new RuntimeException(ex);
+		}
+		
+	}
+	
+	public void log(String desc) {
+		test.log(Status.INFO, desc);
+	}
+
+
 
 }

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Reporting.BaseTest">
+      <class name="Utilities.ExcelData">
         <methods>
-          <include name="initializeDriver"/>
-          <include name="initializeDriver"/>
+          <include name="xlData"/>
         </methods>
-      </class> <!-- Reporting.BaseTest -->
+      </class> <!-- Utilities.ExcelData -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

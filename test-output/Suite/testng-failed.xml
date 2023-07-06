@@ -10,8 +10,9 @@
         <parameter name="url" value="https://magento.softwaretestingboard.com"/>
         <parameter name="browser" value="firefox"/>
         <methods>
+          <include name="TestCase2"/>
           <include name="teardown"/>
-          <include name="prodComp1"/>
+          <include name="TestCase1"/>
           <include name="initializeDriver"/>
         </methods>
       </class> <!-- Reporting.TestCase -->
